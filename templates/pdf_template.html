@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Cotización</title>
+    <title>Cotizador de Ventas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            border: 1px solid #333;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Cotización</h1>
-    <p>ATENCIÓN: {{ atencion }}</p>
-    <p>EMPRESA: {{ empresa }}</p>
-    <p>TIPO: {{ tipo }}</p>
-    <p>MODELO: {{ modelo }}</p>
-    <p>AÑO: {{ anio }}</p>
-    <p>GARANTÍA: {{ garantia }}</p>
-    <p>VERSIONES: {{ versiones }}</p>
-    <p>Precio: ${{ precio }}</p>
-    <p>Área de carga - Largo: {{ largo }}, Ancho: {{ ancho }}, Alto: {{ alto }}</p>
-    <p>PBV: {{ pbv }}</p>
-    <p>Opción seleccionada: {{ opcionesCarga }} - {{ opcionSeleccionada }}</p>
+    <h1>Cotizador de Ventas</h1>
+    <div class="container">
+        <p><strong>Atención:</strong> {{ atencion }}</p>
+        <p><strong>Empresa:</strong> {{ empresa }}</p>
+        <p><strong>Tipo:</strong> {{ tipo }}</p>
+        <p><strong>Modelo:</strong> {{ modelo }}</p>
+        <p><strong>Año:</strong> {{ ano }}</p>
+        <p><strong>Garantía:</strong> {{ garantia }}</p>
+        <p><strong>Versión:</strong> {{ version }}</p>
+    </div>
 </body>
 </html>
-
