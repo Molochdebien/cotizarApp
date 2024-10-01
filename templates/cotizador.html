@@ -1,14 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Cotizador</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Captura Datos de Cotización</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Generar Cotización</h1>
-    <form method="POST" action="/cotizacion">
-        Cliente: <input type="text" name="cliente" required><br>
-        Modelo: <input type="text" name="modelo" required><br>
-        <input type="submit" value="Generar Cotización">
-    </form>
+  <h1>Captura Datos de Cotización</h1>
+  
+  <form action="/generate_pdf" method="POST">
+    <label for="atencion">ATENCIÓN:</label>
+    <input type="text" id="atencion" name="atencion" required><br>
+
+    <label for="empresa">EMPRESA:</label>
+    <input type="text" id="empresa" name="empresa" required><br>
+
+    <label for="tipo">TIPO:</label>
+    <select id="tipo" name="tipo" required>
+      <option value="CHASIS">CHASIS</option>
+    </select><br><br>
+
+    <label for="modelo">MODELO:</label>
+    <select id="modelo" name="modelo" required>
+      <option value="TM3">TM3</option>
+    </select><br><br>
+
+    <label for="anio">AÑO:</label>
+    <select id="anio" name="anio" required>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+    </select><br><br>
+
+    <label for="garantia">GARANTÍA:</label>
+    <select id="garantia" name="garantia" required>
+      <option value="3 AÑOS O 100 MIL KILOMETROS">3 AÑOS O 100 MIL KILOMETROS</option>
+    </select><br><br>
+
+    <label for="versiones">VERSIONES:</label>
+    <select id="versiones" name="versiones" required>
+      <option value="CHASIS">CHASIS</option>
+    </select><br><br>
+
+    <label for="precio">Precio:</label>
+    <input type="number" id="precio" name="precio" required><br><br>
+
+    <label for="areaCarga">AREA DE CARGA:</label><br>
+    <label for="largo">Largo:</label>
+    <input type="text" id="largo" name="largo" required><br>
+    <label for="ancho">Ancho:</label>
+    <input type="text" id="ancho" name="ancho" required><br>
+    <label for="alto">Alto:</label>
+    <input type="text" id="alto" name="alto" required><br><br>
+
+    <label for="pbv">PBV:</label>
+    <input type="text" id="pbv" name="pbv" required><br><br>
+
+    <label for="opcionesCarga">Seleccione una opción:</label>
+    <select id="opcionesCarga" name="opcionesCarga" required>
+      <option value="CARGA ÚTIL">CARGA ÚTIL</option>
+      <option value="CAPACIDAD DE ARRASTRE">CAPACIDAD DE ARRASTRE</option>
+      <option value="NUMERO DE PASAJEROS">NUMERO DE PASAJEROS</option>
+      <option value="CARGA SOBRE CHASIS">CARGA SOBRE CHASIS</option>
+    </select><br><br>
+
+    <input type="text" id="opcionSeleccionada" name="opcionSeleccionada" required><br><br>
+
+    <button type="submit">Generar PDF</button>
+  </form>
 </body>
 </html>
